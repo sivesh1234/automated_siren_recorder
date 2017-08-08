@@ -1,0 +1,29 @@
+{
+  "name": "atomicity",
+  "version": "0.0.1",
+  "private": true,
+  "main": "app.js",
+  "dependencies": {
+    "express": "~4.13.4",
+    "moment": "^2.18.1",
+    "elasticity": "git+ssh://git@github.com/vivacitylabs/elasticity.git#master"
+  },
+  "scripts": {
+    "test": "mocha --recursive tests/",
+    "test-jenkins": "mocha --recursive -R xunit test/ > test-reports.xml",
+    "run": "node app.js",
+    "start": "node app.js",
+    "testWatch": "mocha --watch --recursive tests/",
+    "testJenkins": "./node_modules/.bin/mocha --recursive -R xunit tests/ > test-reports.xml",
+    "coverage": "./node_modules/.bin/istanbul cover --report cobertura node_modules/.bin/_mocha --recursive tests/",
+    "eslint": "./node_modules/.bin/eslint -c .eslintrc -f checkstyle **/*.js, *.js > eslint.xml & echo "
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.7.1",
+    "mocha": "^3.1.0",
+    "supertest": "^2.0.0"
+  },
+  "author": "Vivacity Labs",
+  "license": "UNLICENSED"
+}
